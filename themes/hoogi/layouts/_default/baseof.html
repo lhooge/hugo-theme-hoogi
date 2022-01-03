@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+		<div class="container">
+
+            {{ if hugo.IsProduction }}
+                {{- partialCached "header.html" . -}}
+            {{else}}
+                {{- partial "header.html" . -}}
+            {{end}}
+
+            {{ if hugo.IsProduction }}
+                {{- partialCached "nav.html" . -}}
+            {{else}}
+                {{- partial "nav.html" . -}}
+            {{end}}
+
+            <div id="content">
+                {{- block "main" . }}{{- end }}
+            </div>
+
+            {{ if hugo.IsProduction }}
+                {{- partialCached "footer.html" . -}}
+            {{else}}
+                {{- partial "footer.html" . -}}
+            {{end}}
+        </div>
+    </body>
+</html>
