@@ -1,5 +1,11 @@
 # Clean Hugo Blog Theme
 
+## Features
+- Responsive
+- Dark / Light Mode Theme
+   - Syntax highlighting for dark and light theme
+- Left and bottom navigation
+
 ## Screenshot
 
  - Darkmode
@@ -14,12 +20,6 @@
 
 [![](images/mobile.png)](images/mobile.png)
 
-
-## Features
- - Responsive
- - Dark / Light Mode Theme
-   - Syntax highlighting for dark and light theme
- - Left and bottom navigation
 
 ## Installation 
 
