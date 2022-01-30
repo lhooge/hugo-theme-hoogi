@@ -27,8 +27,8 @@
    - `git clone https://github.com/lhooge/hugo-theme-hoogi.git`
  - To see the example site run command from exampleSite directory: 
    - `hugo server -t ../../  -D`
- - For theme installation see:
-   - `gohugo.io/getting-started/quick-start/`
+ - For detailed theme installation see:
+   - https://gohugo.io/getting-started/quick-start/
    
    
 # Configuration
