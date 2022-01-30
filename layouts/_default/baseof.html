@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html {{ if .Site.Params.languageCode }} lang=".Site.Params.languageCode" {{ end }}>
     {{- partial "head.html" . -}}
+
     <body>
-		<div class="container">
+		<div id="container">
 
             {{ if hugo.IsProduction }}
-                {{- partialCached "header.html" . -}}
+                {{- partialCached "header.html" . }}
             {{else}}
-                {{- partial "header.html" . -}}
+                {{- partial "header.html" . }}
             {{end}}
 
             {{ if hugo.IsProduction }}
-                {{- partialCached "nav.html" . -}}
+                {{- partialCached "nav.html" . .Section .Name }}
             {{else}}
-                {{- partial "nav.html" . -}}
+                {{- partial "nav.html" . }}
             {{end}}
 
-            <div id="content">
+            <main>
                 {{- block "main" . }}{{- end }}
-            </div>
+            </main>
+
+            {{ if isset .Site.Taxonomies "categories" }}
+            {{ if not (eq (len .Site.Taxonomies.categories) 0) }}
+            <aside>
+                {{ if hugo.IsProduction }}
+                    {{- partialCached "aside.html" . .Title }}
+                {{else}}
+                    {{- partial "aside.html" . }}
+                {{end}}
+            </aside>
+            {{ end }}
+            {{ end }}
 
             {{ if hugo.IsProduction }}
-                {{- partialCached "footer.html" . -}}
+                {{- partialCached "footer.html" . .Name }}
             {{else}}
-                {{- partial "footer.html" . -}}
+                {{- partial "footer.html" . }}
             {{end}}
         </div>
     </body>

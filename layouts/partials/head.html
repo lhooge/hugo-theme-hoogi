@@ -1,11 +1,21 @@
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="css/master.css">
 
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+
+    <link rel="stylesheet" href="{{ "css/master.css" | relURL }}">
     <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
-    
-    {{ $title := print .Site.Title " | " .Title }}
-    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+
+    {{ if .OutputFormats.Get "RSS" }}
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    {{ end }}
+    {{ end }}
+
+    {{ $title := print .Title " | " .Site.Title }}
+
     <title>{{ $title }}</title>
 </head>

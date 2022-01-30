@@ -1,7 +1,13 @@
 <footer>
     <ul>
-        <li>
-            <a class="active" href="#">Impressum</a>
-        </li>
+        {{ $current := . }}
+        {{ range .Site.Menus.footer.ByWeight }}
+            {{ $active := or ($current.IsMenuCurrent "footer" .) ($current.HasMenuCurrent "footer" .) }}
+            {{ $active = or $active (eq .Name $current.Title) }}
+
+            <li>
+                <a class="{{if $active}}active{{end}}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+            </li>
+        {{ end }}
     </ul>
 </footer>

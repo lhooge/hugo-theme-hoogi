@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article>
+    <div id="index">
+        <h1>Index</h1>
+
+        <ul>
+            {{ with .Site.GetPage "section" "posts" }}
+            {{ range .Data.Pages.GroupByDate "2006-01" }}
+            <li class="year">
+                <h4>{{.Key}}</h4>
+            </li>
+
+            <ul class="submenu">
+                {{ range .Pages }}
+                <li class="submenu-item">
+                    <a href="{{.Permalink}}"><time>{{ .Date.Format "Jan 2, 2006" }}</time> | {{.Title}}</a>
+                </li>
+                {{ end }}
+            </ul>
+            {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</article>
+{{ end }}

@@ -1,0 +1,20 @@
+{{ define "main" }}
+    {{ range .Paginator.Pages }}
+        <article>
+            <header>
+                <h1><a href="{{.Permalink}}">{{.Title}}</a></h1>
+                <p>{{ if .Date }} written  {{ if .Params.Author }} by {{ .Params.Author }} {{ end }} on <time>{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}</p>
+            </header>
+            {{ if .Site.Params.useSummary }}
+                {{ .Summary }}
+
+                <p style="text-align: right"><a href='{{ .Permalink }}'>Read more &raquo;</a></p>
+            {{ else }}
+                {{.Content}}
+            {{ end }}
+        </article>
+
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+{{ end }}

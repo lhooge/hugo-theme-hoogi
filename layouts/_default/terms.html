@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  {{ range .Data.Terms.Alphabetical }}
+  <ul>
+    <li><a href="{{.Page.Permalink}}">{{ printf "%s (%d)" .Page.Title .Count }}</a></li>
+  </ul>
+{{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,47 @@
+baseURL = 'http://localhost/'
+languageCode = 'en-us'
+title = 'This is an example site'
+theme = 'Hoogi'
+
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+relativeURLs = true
+
+[Params]
+    useSummary = true
+
+[permalinks]
+    posts = "/:year/:month/:slug/"
+
+[menu]
+   [[menu.nav]]
+        name       = "About"
+        identifier = "about"
+        url        = "/"
+        weight     = 1
+
+    [[menu.nav]]
+        name       = "Articles"
+        identifier = "articles"
+        url        = "/posts"
+        weight     = 2
+
+    [[menu.nav]]
+        name       = "Archive"
+        identifier = "archive"
+        url        = "/archive"
+        weight     = 3
+
+    [[menu.nav]]
+        name       = "Tags"
+        identifier = "tags"
+        url        = "/tags"
+        weight     = 4
+
+    [[menu.footer]]
+        name       = "Privacy Policy"
+        identifier = "privacy"
+        url        = "/privacy"
+        weight     = 1

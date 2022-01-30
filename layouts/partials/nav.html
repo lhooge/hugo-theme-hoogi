@@ -1,11 +1,13 @@
 <nav>
     <ul>
+        {{ $current := . }}
+        {{ range .Site.Menus.nav }}
+            {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+            {{ $active = or $active (eq .Name $current.Title) }}
+            {{ $active = or $active (and (eq .Name "Articles") (eq $current.Section "posts")) }}
         <li>
-            <a class="active" href="/">Articles</a>
+            <a {{if $active}}class="active"{{end}} href="{{ .URL | relLangURL }}">{{ .Name }}</a>
         </li>
-
-        <li>
-            <a href="/index">Index</a>
-        </li>
+        {{ end }}
     </ul>
 </nav>
