@@ -1,5 +1,6 @@
 baseURL = 'http://localhost/'
-languageCode = 'en-us'
+languageCode = "en-us"
+DefaultContentLanguage = "en"
 title = 'This is an example site'
 theme = 'Hoogi'
 
@@ -7,10 +8,11 @@ pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
-relativeURLs = true
+relativeURLs = false
 
 [Params]
     useSummary = true
+    description = 'An example description'
 
 [permalinks]
     posts = "/:year/:month/:slug/"

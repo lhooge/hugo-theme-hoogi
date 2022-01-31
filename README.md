@@ -2,17 +2,18 @@
 
 ## Features
 - Responsive
-- Dark / Light Mode Theme
+- Dark / Light mode Theme
    - Syntax highlighting for dark and light theme
 - Left and bottom navigation
+- Layout for an archive page
 
 ## Screenshot
 
- - Darkmode
+ - Dark mode
 
 [![](images/darkmode.png)](images/darkmode.png)
 
- - Lightmode
+ - Light mode
  
 [![](images/lightmode.png)](images/lightmode.png)
 
@@ -33,7 +34,8 @@
    
 # Configuration
 
-It is currently just 'useSummary' available for configuring. If set to 'true' a summary will be shown on list overview, 
+It is currently just 'useSummary' available for configuring. 
+If set to 'true' a summary will be shown on list overview, 
 otherwise the complete post is shown.
 
 ```
