@@ -10,7 +10,7 @@ pygmentsCodefencesGuessSyntax = true
 
 relativeURLs = false
 
-[Params]
+[params]
     useSummary = true
     description = 'An example description'
 

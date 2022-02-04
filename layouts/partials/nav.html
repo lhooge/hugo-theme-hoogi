@@ -4,6 +4,7 @@
         {{ range .Site.Menus.nav }}
             {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
             {{ $active = or $active (eq .Name $current.Title) }}
+            {{ $active = or $active (eq .Identifier $current.Title) }}
             {{ $active = or $active (and (eq .Name "Articles") (eq $current.Section "posts")) }}
         <li>
             <a {{if $active}}class="active"{{end}} href="{{ .URL | relLangURL }}">{{ .Name }}</a>

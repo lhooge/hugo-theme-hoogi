@@ -3,6 +3,7 @@
         {{ $current := . }}
         {{ range .Site.Menus.footer.ByWeight }}
             {{ $active := or ($current.IsMenuCurrent "footer" .) ($current.HasMenuCurrent "footer" .) }}
+            {{ $active = or $active (eq .Identifier $current.Title) }}
             {{ $active = or $active (eq .Name $current.Title) }}
 
             <li>
