@@ -12,6 +12,7 @@ relativeURLs = false
 
 [params]
     useSummary = true
+    sidebar = true
     description = 'An example description'
 
 [permalinks]

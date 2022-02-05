@@ -2,10 +2,14 @@
 
 ## Features
 - Responsive
-- Dark / Light mode Theme
-   - Syntax highlighting for dark and light theme
+- Honors dark and light color preference 
+   - Syntax highlighting for dark and light colors
 - Left and bottom navigation
 - Layout for an archive page
+
+## Demo
+
+  - https://hugodemo.hoogi.eu
 
 ## Screenshot
 
@@ -34,13 +38,16 @@
    
 # Configuration
 
-It is currently just 'useSummary' available for configuring. 
-If set to 'true' a summary will be shown on list overview, 
-otherwise the complete post is shown.
+To inject custom HEAD elements create a "head-custom.html" in '<YOUR_SITE>/layouts/partials'.
+
+For changing colors see the overridden link visited example for the dark theme in 'exampleSite/layouts/partials/head-custom.html'.
 
 ```
-[Params]
-useSummary = true | false
+[params]
+    # If set to 'true' a summary will be shown on list overview, otherwise the complete post is shown.
+    useSummary = true | false
+    # Shows a right sidebar with all categories.
+    sidebar = true | false
 ```
 
 ## License

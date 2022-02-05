@@ -1,0 +1,17 @@
+<h1>
+    {{ if eq (.Scratch.Get "scope") "single" }}
+        {{.Title}}
+    {{ else }}
+        <a href="{{.Permalink}}">{{.Title}}</a>
+    {{ end }}
+</h1>
+<p>
+    {{ if .Date }} written {{ if .Params.Author }} by {{ .Params.Author }} {{ end }} on
+    <time>{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+    {{ if .Params.categories }}
+        in
+        {{ range .Params.categories }}
+            <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . | humanize }}</a>
+        {{ end }}
+    {{ end }}
+</p>

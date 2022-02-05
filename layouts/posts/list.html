@@ -1,4 +1,6 @@
 {{ define "main" }}
+    {{ .Scratch.Set "scope" "list" }}
+
     {{ range .Paginator.Pages }}
         <article>
             <header>

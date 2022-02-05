@@ -13,19 +13,24 @@
 
 @font-face {
 	font-family: 'rubik';
+	font-style: normal;
+	font-weight: normal;
 	src: url("fonts/Rubik-Regular.ttf");
+	font-display: swap
 }
 
 @font-face {
 	font-family: 'rubik';
 	src: url("fonts/Rubik-Bold.ttf");
 	font-weight: bold;
+	font-display: swap
 }
 
 @font-face {
 	font-family: 'rubik';
 	src: url("fonts/Rubik-Italic.ttf");
 	font-style: italic;
+	font-display: swap
 }
 
 @font-face {
@@ -33,6 +38,7 @@
 	src: url("fonts/Rubik-BoldItalic.ttf");
 	font-weight: bold;
 	font-style: italic;
+	font-display: swap
 }
 
 html {
@@ -63,6 +69,7 @@ body {
 
 		--footer-bg-color: #1f1f1f;;
 		--footer-text-color: #ffffff;
+		--footer-active-link-color: #ffffff;
 
 		--headline-text-color: #285e8e;
 		--article-box-bg-color: #f8f8f8;
@@ -89,6 +96,7 @@ body {
 
 		--footer-bg-color: #1f1f1f;;
 		--footer-text-color: #ffffff;
+		--footer-active-link-color: #ffffff;
 
 		--article-box-bg-color: #1f1f1f;
 		--headline-text-color: #3a8cd3;
@@ -173,13 +181,13 @@ a:visited {
 /*
  * Layout positioning
 */
-main {
+#container>main {
 	grid-area: content;
 	width: 100%;
 	padding: 0 1em 1em 1em;
 }
 
-header#page-header {
+#container>header#page-header {
 	display: flex;
 	grid-area: header;
 	align-items: center;
@@ -187,13 +195,13 @@ header#page-header {
 	background-color: var(--header-bg-color);
 }
 
-nav {
+#container>nav {
 	grid-area: nav;
 	background-color: var(--nav-bg-color);
 	font-size: 1.1em;
 }
 
-aside {
+#container>aside {
 	color: var(--nav-text-color);
 	grid-area: sidebar;
 	background-color: var(--nav-bg-color);
@@ -214,16 +222,16 @@ header#page-header {
  * Navigation styles left and right side
  */
 
-aside ul li:first-child {
+#container>aside ul li:first-child {
 	padding: 1rem 0.5rem;
 	font-size: 1.3em;
 	border-bottom: 0.0625rem solid var(--nav-border-color);
 }
 
-aside a,
-nav a,
-aside a:visited,
-nav a:visited {
+#container>aside a,
+#container>nav a,
+#container>aside a:visited,
+#container>nav a:visited {
 	color: var(--nav-text-color);
 	display: inline-block;
 	border-bottom: 0.0625rem solid var(--nav-border-color);
@@ -232,19 +240,19 @@ nav a:visited {
 	text-decoration: none;
 }
 
-nav a:active,
-nav a:hover,
-nav a:active,
-nav a.active {
+#container>nav a:active,
+#container>nav a:hover,
+#container>nav a:active,
+#container>nav a.active {
 	color: var(--nav-hover-color);
 	background-color: var(--nav-hover-bg-color);
 	border-right: 0.3125rem solid var(--nav-border-color);
 }
 
-aside a:active,
-aside a:hover,
-aside a:active,
-aside a.active {
+#container>aside a:active,
+#container>aside a:hover,
+#container>aside a:active,
+#container>aside a.active {
 	color: var(--nav-hover-color);
 	background-color: var(--nav-hover-bg-color);
 	border-left: 0.3125rem solid var(--nav-border-color);
@@ -253,7 +261,7 @@ aside a.active {
 /**
  * Footer styles
  */
-footer {
+#container>footer {
 	grid-area: footer;
 	background-color: var(--footer-bg-color);
 	color: var(--footer-text-color);
@@ -261,39 +269,39 @@ footer {
 	font-size: 0.9em;
 }
 
-footer p {
+#container>footer p {
 	padding-top: 5px;
 	padding-left: 5px;
 	margin: auto;
 }
 
-footer ul {
+#container>footer ul {
 	list-style-type: none;
 }
 
-footer ul li {
+#container>footer ul li {
 	display: inline-block;
 	list-style-type: none;
 	padding: 5px 0;
 }
 
-footer a,
-footer a:visited {
+#container>footer a,
+#container>footer a:visited {
 	color: var(--footer-text-color);
 	width: 100%;
 	text-decoration: underline;
 }
 
-footer a:active,
-footer a:hover,
-footer a:active,
-footer a.active {
-	color: #fff;
+#container>footer a:active,
+#container>footer a:hover,
+#container>ooter a:active,
+#container>footer a.active {
+	color: var(--footer-active-link-color);
 	text-decoration: none;
 }
 
-nav li,
-aside li {
+#container>nav li,
+#container>aside li {
 	list-style-type: none;
 }
 
@@ -405,6 +413,20 @@ article th {
 
 article th {
 	font-weight: bold;
+}
+
+
+article footer {
+	text-align: left;
+}
+
+article footer .tags {
+	text-align: left;
+	font-size: 0.9em;
+}
+
+article footer div.read-more {
+	text-align: right;
 }
 
 .footnotes {
