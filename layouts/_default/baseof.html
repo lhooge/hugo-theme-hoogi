@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html {{ if .Lang }}lang="{{.Lang}}"{{ end }}>
-    {{- partial "head.html" . -}}
+    <head>
+        {{- partialCached "head.html" . -}}
+
+        {{- partial "head-custom.html" . -}}
+    </head>
 
     <body>
 		<div id="container">
@@ -21,7 +25,7 @@
                 {{- block "main" . }}{{- end }}
             </main>
 
-            {{ if isset .Site.Taxonomies "categories" }}
+            {{ if and .Site.Taxonomies "categories" .Site.Params.sidebar }}
             {{ if not (eq (len .Site.Taxonomies.categories) 0) }}
             <aside>
                 {{ if hugo.IsProduction }}
