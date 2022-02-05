@@ -42,6 +42,8 @@ To inject custom HEAD elements create a "head-custom.html" in '<YOUR_SITE>/layou
 
 For changing colors see the overridden link visited example for the dark theme in 'exampleSite/layouts/partials/head-custom.html'.
 
+Additional params: 
+
 ```
 [params]
     # If set to 'true' a summary will be shown on list overview, otherwise the complete post is shown.

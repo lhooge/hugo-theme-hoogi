@@ -2,11 +2,22 @@
     {{ range .Paginator.Pages }}
         <article>
             <header>
-                {{ partial "article-header.html" . }}
+                <h1>
+                    <a href="{{.Permalink}}">{{.Title}}</a>
+                </h1>
+                <p>
+                    {{ if .Date }} written {{ if .Params.Author }} by {{ .Params.Author }} {{ end }} on
+                    <time>{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+                    {{ if .Params.categories }}
+                    in
+                    {{ range .Params.categories }}
+                    <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . | humanize }}</a>
+                    {{ end }}
+                    {{ end }}
+                </p>
             </header>
             {{ if .Site.Params.useSummary }}
                 {{ .Summary }}
-
                 {{ partial "article-footer.html" . }}
             {{ else }}
                 {{.Content}}

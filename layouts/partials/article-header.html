@@ -1,9 +1,6 @@
 <h1>
-    {{ if eq (.Scratch.Get "scope") "single" }}
-        {{.Title}}
-    {{ else }}
-        <a href="{{.Permalink}}">{{.Title}}</a>
-    {{ end }}
+    {{.Title}}
+    <a href="{{.Permalink}}">{{.Title}}</a>
 </h1>
 <p>
     {{ if .Date }} written {{ if .Params.Author }} by {{ .Params.Author }} {{ end }} on
