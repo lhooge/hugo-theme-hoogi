@@ -1,5 +1,7 @@
 <footer>
-    <div class="read-more"><a href='{{ .Permalink }}'>{{ T "read_more" }}</a></div>
+    {{ if .Site.Params.useSummary }}
+        <div class="read-more"><a href='{{ .Permalink }}'>{{ T "read_more" }}</a></div>
+    {{ end }}
 
     {{ if .Params.tags }}
         <ul class="tags">

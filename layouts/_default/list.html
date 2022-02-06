@@ -2,7 +2,6 @@
     {{ range .Paginator.Pages }}
         {{ .Scratch.Set "scope" "list" }}
         <article>
-
             {{ partial "article-header.html" . }}
 
             {{ if .Site.Params.useSummary }}
