@@ -1,4 +1,4 @@
-baseURL = 'http://localhost/'
+baseURL = 'https://hugodemo.hoogi.eu/'
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = 'This is an example site'

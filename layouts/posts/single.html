@@ -2,19 +2,7 @@
 {{ .Scratch.Set "scope" "single" }}
 <article>
     <header>
-        <h1>
-            {{.Title}}
-        </h1>
-        <p>
-            {{ if .Date }} written {{ if .Params.Author }} by {{ .Params.Author }} {{ end }} on
-            <time>{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
-            {{ if .Params.categories }}
-            in
-            {{ range .Params.categories }}
-            <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . | humanize }}</a>
-            {{ end }}
-            {{ end }}
-        </p>
+        {{ partial "article-header.html" . }}
     </header>
     {{ .Content }}
 </article>

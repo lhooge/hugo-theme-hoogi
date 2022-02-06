@@ -1,0 +1,21 @@
+{{ define "main" }}
+    {{ range .Paginator.Pages }}
+        {{ .Scratch.Set "scope" "list" }}
+        <article>
+            <header>
+                {{ partial "article-header.html" . }}
+            </header>
+            {{ if .Site.Params.useSummary }}
+                {{ .Summary }}
+                {{ partial "article-footer.html" . }}
+            {{ else }}
+                {{.Content}}
+
+                {{ partial "article-footer.html" . }}
+            {{ end }}
+        </article>
+
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+{{ end }}
