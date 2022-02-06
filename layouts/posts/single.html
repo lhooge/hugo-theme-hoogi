@@ -1,9 +1,8 @@
 {{ define "main" }}
 {{ .Scratch.Set "scope" "single" }}
 <article>
-    <header>
-        {{ partial "article-header.html" . }}
-    </header>
+    {{ partial "article-header.html" . }}
+
     {{ .Content }}
 </article>
 {{ end }}

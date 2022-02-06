@@ -1,13 +1,13 @@
 <ul>
     {{ $current := . }}
 
-    <li>Categories</li>
+    <li>{{ T "categories" }}</li>
 
     {{ range $key, $value := .Site.Taxonomies.categories }}
         {{ $active := (eq $key $current.Title) }}
 
         <li>
-            <a href="{{ .Page.Permalink | relURL }}" {{if $active}}class="active"{{end}}>{{ $key | humanize }}  ({{ len $value }})</a>
+            <a href="{{ .Page.Permalink | relURL }}" {{if $active}}class="active"{{end}}>{{ $key | humanize }} ({{ len $value }})</a>
         </li>
     {{end}}
 </ul>

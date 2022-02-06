@@ -1,17 +1,21 @@
-<h1>
-    {{ if eq (.Scratch.Get "scope") "single" }}
-        {{.Title}}
-    {{ else }}
-        <a href="{{.Permalink}}">{{.Title}}</a>
-    {{ end }}
-</h1>
-<p>
-    {{ if .Date }} written {{ if .Params.Author }} by {{ .Params.Author }} {{ end }} on
-    <time>{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
-    {{ if .Params.categories }}
-        in
-        {{ range .Params.categories }}
-            <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . | humanize }}</a>
+<header>
+    <h1>
+        {{ if eq (.Scratch.Get "scope") "single" }}
+            {{.Title}}
+        {{ else }}
+            <a href="{{.Permalink}}">{{.Title}}</a>
         {{ end }}
-    {{ end }}
-</p>
+    </h1>
+
+    <p>
+        {{ T "written_on" }} <time>{{ .Date.Format "Jan 2, 2006" }}</time> {{ if .Params.Author }}{{ T "written_by" }} {{ .Params.Author }}{{ end }}
+    </p>
+
+    <ul class="categories">
+        {{ if .Params.categories }}
+            {{ range .Params.categories }}
+                <li><a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . | humanize }}</a></li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</header>

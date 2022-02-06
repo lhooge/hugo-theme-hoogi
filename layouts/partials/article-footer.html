@@ -1,12 +1,11 @@
 <footer>
-    <div class="read-more"><a href='{{ .Permalink }}'>Read more &raquo;</a></div>
+    <div class="read-more"><a href='{{ .Permalink }}'>{{ T "read_more" }}</a></div>
 
     {{ if .Params.tags }}
-    <div class="tags">Tags:
-        {{ range .Params.tags }}
-        <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">#{{ . }}</a>
-        {{ end }}
-    </div>
+        <ul class="tags">
+            {{ range .Params.tags }}
+            <li><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">#{{ . }}</a></li>
+            {{ end }}
+        </ul>
     {{end}}
-
 </footer>

@@ -337,7 +337,7 @@ article header {
 }
 
 article header h1 {
-	margin: 0;
+	margin-bottom: 5px;
 	font-size: 2em;
 }
 
@@ -345,12 +345,32 @@ article header h1 a {
 	color: var(--headline-text-color);
 }
 
-article header p {
-	font-size: 0.9em;
-	margin: 0 0 1em 0;
-	padding-bottom: 5px;
+article header {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
 	border-bottom: 0.14rem solid #285e8e;
 }
+article header p {
+	font-size: 0.9em;
+	margin-bottom: 0.25em;
+	line-height: 1;
+}
+
+article header ul.categories {
+	text-align: left;
+	font-size: 0.9em;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+article header ul.categories li {
+	text-align: left;
+	font-size: 0.9em;
+	display: inline;
+	margin-right: 5px;
+}
+
 
 article h1,
 article h2,
@@ -405,31 +425,7 @@ article table {
 	margin-bottom: 1.5em;
 }
 
-article td,
-article th {
-	border: 1px solid gray;
-	padding: 0.5rem;
-}
-
-article th {
-	font-weight: bold;
-}
-
-
-article footer {
-	text-align: left;
-}
-
-article footer .tags {
-	text-align: left;
-	font-size: 0.9em;
-}
-
-article footer div.read-more {
-	text-align: right;
-}
-
-.footnotes {
+article .footnotes {
 	margin-top: 0.4em;
 	font-size: 0.7em;
 }
@@ -446,6 +442,39 @@ article hr {
 	margin-top: 1rem;
 }
 
+article td,
+article th {
+	border: 1px solid gray;
+	padding: 0.5rem;
+}
+
+article th {
+	font-weight: bold;
+}
+
+article footer {
+	text-align: left;
+}
+
+article footer ul.tags {
+	text-align: left;
+	font-size: 0.9em;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+article footer ul.tags li {
+	text-align: left;
+	font-size: 0.9em;
+	display: inline;
+	margin-right: 5px;
+}
+
+article footer div.read-more {
+	text-align: right;
+}
+
 .highlight .chroma {
 	background-color: var(--article-box-bg-color);
 }
@@ -458,6 +487,16 @@ article hr {
 
 #pagination .pages {
 	padding: 1em 0;
+}
+
+#pagination ul li {
+	display: inline;
+	margin-right: 5px;
+}
+
+#pagination ul li a {
+	display: inline;
+	font-size: 1.3em;
 }
 
 #index .menu {

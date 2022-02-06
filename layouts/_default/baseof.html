@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html {{ if .Lang }}lang="{{.Lang}}"{{ end }}>
     <head>
-        {{- partialCached "head.html" . -}}
+        {{- partialCached "head.html" . .Description .IsPage .Title }}
 
         {{- partial "head-custom.html" . -}}
     </head>

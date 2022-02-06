@@ -1,13 +1,13 @@
 baseURL = 'https://hugodemo.hoogi.eu/'
 languageCode = "en-us"
-DefaultContentLanguage = "en"
+defaultContentLanguage = "en"
 title = 'This is an example site'
 theme = 'Hoogi'
 
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
-
+paginate = 4
 relativeURLs = false
 
 [params]

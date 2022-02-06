@@ -3,15 +3,15 @@
 <div id="pagination">
     <ul>
     {{ if .Paginator.HasPrev }}
-        <a class="button button-active" href="{{ .Paginator.Prev.URL }}">&laquo; Backward</a>
+        <li><a class="button button-active" href="{{ .Paginator.Prev.URL }}">{{ T "pagination_backward" }}</a></li>
     {{ end }}
 
     {{ range .Paginator.Pagers }}
-        <a class="button button-active" href="{{ .URL }}">{{ .PageNumber }}</a>
+        <li><a class="button button-active" href="{{ .URL }}">{{ .PageNumber }}</a></li>
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-        <a class="button button-active" href="{{ .Paginator.Next.URL }}">Forward &raquo;</a>
+        <li><a class="button button-active" href="{{ .Paginator.Next.URL }}">{{ T "pagination_forward" }}</a></li>
     {{ end }}
     </ul>
 </div>

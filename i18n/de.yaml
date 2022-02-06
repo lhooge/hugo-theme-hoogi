@@ -1,0 +1,17 @@
+- id: written_on
+  translation: "geschrieben am"
+
+- id: written_by
+  translation: "von"
+
+- id: categories
+  translation: "Kategorien"
+
+- id: read_more
+  translation: "Weiterlesen »"
+
+- id: pagination_backward
+  translation: "« Zurück"
+
+- id: pagination_forward
+  translation: "Weiter »"
