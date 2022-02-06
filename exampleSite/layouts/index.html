@@ -1,0 +1,23 @@
+{{ define "main"}}
+    <article>
+        {{ .Content }}
+
+        <h2>Toggle Dark Mode</h2>
+
+        <form>
+            <input type="checkbox" id="toggleDarkMode">
+            <label for="toggleDarkMode">Toggle Dark/Light mode</label>
+        </form>
+
+        <script type="text/javascript">
+            let toggleDarkMode = document.getElementById("toggleDarkMode");
+
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                toggleDarkMode.checked = true
+            }
+            document.documentElement.classList.add("light")
+
+
+        </script>
+    </article>
+{{ end }}
