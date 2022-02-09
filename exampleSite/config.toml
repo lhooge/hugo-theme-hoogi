@@ -1,7 +1,7 @@
 baseURL = 'https://hugodemo.hoogi.eu/'
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = 'This is an example site'
+title = 'Hugodemo'
 theme = 'Hoogi'
 
 pygmentsUseClasses = true
@@ -11,6 +11,7 @@ paginate = 4
 relativeURLs = false
 
 [params]
+    mainSections = "posts"
     useSummary = true
     sidebar = true
     description = 'An example description'

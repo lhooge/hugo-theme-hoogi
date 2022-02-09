@@ -1,117 +1,56 @@
-/* Import syntax themes */
-@import "syntax-light.css" screen;
-@import "syntax-dark.css" screen and (prefers-color-scheme: dark);
-
 *,
-*:before,
-*:after {
-	-webkit-box-sizing: border-box;
+*::before,
+*::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
 @font-face {
-	font-family: 'rubik';
+	font-family: rubik;
 	font-style: normal;
 	font-weight: normal;
 	src: url("fonts/Rubik-Regular.woff2") format("woff2");
-	font-display: swap
+	font-display: swap;
 }
 
 @font-face {
-	font-family: 'rubik';
+	font-family: rubik;
 	src: url("fonts/Rubik-Bold.woff2") format("woff2");
 	font-weight: bold;
-	font-display: swap
+	font-display: swap;
 }
 
 @font-face {
-	font-family: 'rubik';
+	font-family: rubik;
 	src: url("fonts/Rubik-Italic.woff2") format("woff2");
 	font-style: italic;
-	font-display: swap
+	font-display: swap;
 }
 
 @font-face {
-	font-family: 'rubik';
+	font-family: rubik;
 	src: url("fonts/Rubik-BoldItalic.woff2") format("woff2");
 	font-weight: bold;
 	font-style: italic;
-	font-display: swap
+	font-display: swap;
 }
 
 html {
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 body {
-	font-family: "rubik", Helvetica, Arial, sans-serif;
+	font-family: rubik, Helvetica, Arial, sans-serif;
 	font-size: 100%;
 	background-color: var(--body-bg-color);
 	color: var(--body-text-color);
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		--body-bg-color: #ffffff;
-		--body-text-color: #000000;
-
-		--header-bg-color: #285e8e;
-		--header-text-color: #fffaf0;
-
-		--nav-bg-color: #1f1f1f;
-		--nav-text-color: #ffffff;
-		--nav-hover-bg-color: #fffaf0;
-		--nav-border-color: #285e8e;
-		--nav-hover-color: #285e8e;
-
-		--footer-bg-color: #1f1f1f;;
-		--footer-text-color: #ffffff;
-		--footer-active-link-color: #ffffff;
-
-		--headline-text-color: #285e8e;
-		--article-box-bg-color: #f8f8f8;
-
-		--link-text-color: #285e8e;
-		--link-visited-text-color: #c58af9;
-		--code-text-color: #000000;
-		--code-bg-color: #f8f8f8;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--body-bg-color: #000000;
-		--body-text-color: #ffffff;
-
-		--header-bg-color: #132d44;
-		--header-text-color: #fffaf0;
-
-		--nav-bg-color: #1f1f1f;
-		--nav-border-color: #132d44;
-		--nav-hover-bg-color: #000000;
-		--nav-hover-color: #ffffff;
-
-		--footer-bg-color: #1f1f1f;;
-		--footer-text-color: #ffffff;
-		--footer-active-link-color: #ffffff;
-
-		--article-box-bg-color: #1f1f1f;
-		--headline-text-color: #3a8cd3;
-
-		--link-text-color: #8ab4f8;
-		--link-visited-text-color: #c58af9;
-		--code-text-color: #ffffff;
-		--code-bg-color: #1f1f1f;
-	}
-}
-
 #container {
 	height: 100vh;
 	display: grid;
-	grid-template-rows: 80px 1fr 30px;
+	grid-template-rows: 80px 1fr 40px;
 	grid-template-columns: minmax(150px, 20%) 30% 35% minmax(100px, 15%);
 	grid-template-areas:
 		"header header header header"
@@ -133,7 +72,12 @@ body {
   * General styles
  */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	color: var(--headline-text-color);
 	font-weight: 700;
 }
@@ -200,7 +144,6 @@ header#page-header {
 /**
  * Navigation styles left and right side
  */
-
 #container > aside ul li:first-child {
 	padding: 1rem 0.5rem;
 	font-size: 1.3em;
@@ -242,17 +185,14 @@ header#page-header {
  */
 #container > footer {
 	grid-area: footer;
+	display: inline-grid;
 	background-color: var(--footer-bg-color);
 	color: var(--footer-text-color);
-	text-align: center;
 	font-size: 0.9em;
+	justify-items: center;
+	align-items: center;
 }
 
-#container > footer p {
-	padding-top: 5px;
-	padding-left: 5px;
-	margin: auto;
-}
 
 #container > footer ul {
 	list-style-type: none;
@@ -260,8 +200,7 @@ header#page-header {
 
 #container > footer ul li {
 	display: inline-block;
-	list-style-type: none;
-	padding: 5px 0;
+	margin-right: 0.8em;
 }
 
 #container > footer a,
@@ -273,7 +212,7 @@ header#page-header {
 
 #container > footer a:active,
 #container > footer a:hover,
-#container > ooter a:active,
+#container > footer a:active,
 #container > footer a.active {
 	color: var(--footer-active-link-color);
 	text-decoration: none;
@@ -284,13 +223,40 @@ header#page-header {
 	list-style-type: none;
 }
 
+
+#pagination {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 2em 0;
+}
+
+#pagination .pages {
+	padding: 1em 0;
+}
+
+#pagination ul li {
+	display: inline;
+	margin-right: 0.7em;
+}
+
+#pagination ul li a {
+	font-size: 1.3em;
+}
+
+#index .menu {
+	list-style-type: none;
+}
+
+#index .submenu {
+	list-style-type: none;
+	padding: 0.4em 0.8em;
+}
+
 pre {
 	display: block;
 	font-size: 1.1em;
-	white-space: pre;
 	white-space: pre-wrap;
-	white-space: -moz-pre-wrap;
-	white-space: -o-pre-wrap;
 	border: 1px solid grey;
 	background-color: var(--code-bg-color);
 	color: var(--code-text-color);
@@ -349,7 +315,6 @@ article header ul.categories li {
 	display: inline;
 	margin-right: 5px;
 }
-
 
 article h1,
 article h2,
@@ -458,35 +423,6 @@ article footer div.read-more {
 	background-color: var(--article-box-bg-color);
 }
 
-#pagination {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-#pagination .pages {
-	padding: 1em 0;
-}
-
-#pagination ul li {
-	display: inline;
-	margin-right: 5px;
-}
-
-#pagination ul li a {
-	display: inline;
-	font-size: 1.3em;
-}
-
-#index .menu {
-	list-style-type: none;
-}
-
-#index .submenu {
-	list-style-type: none;
-	padding: 0.4em 0.8em;
-}
-
 #index .submenu-item {
 	margin-bottom: 0.625rem;
 	list-style-type: none;
@@ -507,8 +443,7 @@ article footer div.read-more {
 							"nav"
 							"content"
 							"sidebar"
-							"footer"
-	;
+							"footer";
 
 		grid-template-columns: 100%;
 		grid-template-rows:
@@ -516,8 +451,7 @@ article footer div.read-more {
 							min-content
 							min-content
 							min-content
-							40px
-	;
+							40px;
 	}
 
 	#container > main {

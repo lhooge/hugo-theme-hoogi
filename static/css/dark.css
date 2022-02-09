@@ -1,0 +1,24 @@
+:root {
+    --body-bg-color: #000000;
+    --body-text-color: #ffffff;
+
+    --header-bg-color: #132d44;
+    --header-text-color: #fffaf0;
+
+    --nav-bg-color: #1f1f1f;
+    --nav-border-color: #132d44;
+    --nav-hover-bg-color: #000000;
+    --nav-hover-color: #ffffff;
+
+    --footer-bg-color: #1f1f1f;;
+    --footer-text-color: #ffffff;
+    --footer-active-link-color: #ffffff;
+
+    --article-box-bg-color: #1f1f1f;
+    --headline-text-color: #3a8cd3;
+
+    --link-text-color: #8ab4f8;
+    --link-visited-text-color: #c58af9;
+    --code-text-color: #ffffff;
+    --code-bg-color: #1f1f1f;
+}
