@@ -11,7 +11,7 @@
   translation: "Read more »"
 
 - id: pagination_backward
-  translation: "« Backward"
+  translation: "« Newer"
 
 - id: pagination_forward
-  translation: "Forward »"
+  translation: "Older »"
