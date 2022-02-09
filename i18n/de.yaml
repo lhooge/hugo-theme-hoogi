@@ -7,6 +7,9 @@
 - id: categories
   translation: "Kategorien"
 
+- id: category_in
+  translation: "in"
+
 - id: read_more
   translation: "Weiterlesen »"
 
@@ -15,3 +18,4 @@
 
 - id: pagination_forward
   translation: "Älter »"
+

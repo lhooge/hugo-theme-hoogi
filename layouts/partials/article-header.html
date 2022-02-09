@@ -13,6 +13,7 @@
 
     <ul class="categories">
         {{ if .Params.categories }}
+            {{ T "category_in" }}
             {{ range .Params.categories }}
                 <li><a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . | humanize }}</a></li>
             {{ end }}
