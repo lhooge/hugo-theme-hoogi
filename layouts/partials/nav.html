@@ -1,4 +1,4 @@
-<nav>
+<nav class="page-nav">
     <ul>
         {{ $current := . }}
         {{ range .Site.Menus.nav }}
@@ -6,8 +6,8 @@
             {{ $active = or $active (eq .Name $current.Title) }}
             {{ $active = or $active (eq .Identifier $current.Title) }}
             {{ $active = or $active (and (eq .Name "Articles") (eq $current.Section "posts")) }}
-        <li>
-            <a {{if $active}}class="active"{{end}} href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        <li class="nav-item page-nav--items">
+            <a class="link-button link-button--left{{if $active}} link-button--left-active{{end}}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
         </li>
         {{ end }}
     </ul>

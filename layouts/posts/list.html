@@ -1,14 +1,18 @@
 {{ define "main" }}
     {{ range .Paginator.Pages }}
         {{ .Scratch.Set "scope" "list" }}
-        <article>
+        <article class="article">
             {{ partial "article-header.html" . }}
 
             {{ if .Site.Params.useSummary }}
-                {{ .Summary }}
+                <div class="article__content">
+                    {{ .Summary }}
+                </div>
                 {{ partial "article-footer.html" . }}
             {{ else }}
-                {{.Content}}
+                <div class="article__content">
+                    {{.Content}}
+                </div>
 
                 {{ partial "article-footer.html" . }}
             {{ end }}

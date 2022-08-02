@@ -1,17 +1,22 @@
-
 {{ if gt .Paginator.TotalPages 1 }}
-<div id="pagination">
+<div class="pagination">
     <ul>
     {{ if .Paginator.HasPrev }}
-        <li><a class="button button-active" href="{{ .Paginator.Prev.URL }}">{{ T "pagination_backward" }}</a></li>
+        <li class="pagination__list">
+            <a class="pagination__pages" href="{{ .Paginator.Prev.URL }}">{{ T "pagination_backward" }}</a>
+        </li>
     {{ end }}
 
     {{ range .Paginator.Pagers }}
-        <li><a class="button button-active" href="{{ .URL }}">{{ .PageNumber }}</a></li>
+        <li class="pagination__list">
+            <a class="pagination__pages" href="{{ .URL }}">{{ .PageNumber }}</a>
+        </li>
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-        <li><a class="button button-active" href="{{ .Paginator.Next.URL }}">{{ T "pagination_forward" }}</a></li>
+        <li class="pagination__list">
+            <a class="pagination__pages" href="{{ .Paginator.Next.URL }}">{{ T "pagination_forward" }}</a>
+        </li>
     {{ end }}
     </ul>
 </div>

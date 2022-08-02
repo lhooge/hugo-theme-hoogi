@@ -5,19 +5,20 @@
     --header-bg-color: #132d44;
     --header-text-color: #fffaf0;
 
-    --nav-bg-color: #1f1f1f;
+    --nav-bg-color: #111111;
+    --nav-text-color: #ffffff;
     --nav-border-color: #132d44;
     --nav-hover-bg-color: #000000;
     --nav-hover-color: #ffffff;
 
-    --footer-bg-color: #1f1f1f;;
+    --footer-bg-color: #111111;;
     --footer-text-color: #ffffff;
     --footer-active-link-color: #ffffff;
 
-    --article-box-bg-color: #1f1f1f;
+    --article-box-bg-color: #111111;
     --headline-text-color: #3a8cd3;
 
-    --link-text-color: #8ab4f8;
+    --link-text-color: #4e91ff;
     --link-visited-text-color: #c58af9;
     --code-text-color: #ffffff;
     --code-bg-color: #1f1f1f;

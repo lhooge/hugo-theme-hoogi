@@ -1,13 +1,15 @@
-<ul>
-    {{ $current := . }}
+<aside class="page-aside-nav">
+    <ul>
+        {{ $current := . }}
 
-    <li>{{ T "categories" }}</li>
+        <li class="nav-item nav-title">{{ T "categories" }}</li>
 
-    {{ range $key, $value := .Site.Taxonomies.categories }}
-        {{ $active := (eq $key $current.Title) }}
+        {{ range $key, $value := .Site.Taxonomies.categories }}
+            {{ $active := (eq $key $current.Title) }}
 
-        <li>
-            <a href="{{ .Page.Permalink | relURL }}" {{if $active}}class="active"{{end}}>{{ $key | humanize }} ({{ len $value }})</a>
-        </li>
-    {{end}}
-</ul>
+            <li class="nav-item page-aside-nav__items">
+                <a class="link-button link-button--right{{if $active}} link-button--right-active{{end}}" href="{{ .Page.Permalink | relURL }}">{{ $key | humanize }} ({{ len $value }})</a>
+            </li>
+        {{end}}
+    </ul>
+</aside>

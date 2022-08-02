@@ -6,7 +6,7 @@
     </head>
 
     <body>
-		<div id="container">
+		<div class="container">
 
             {{ if hugo.IsProduction }}
                 {{- partialCached "header.html" . }}
@@ -20,19 +20,17 @@
                 {{- partial "nav.html" . }}
             {{end}}
 
-            <main>
+            <main class="page-content">
                 {{- block "main" . }}{{- end }}
             </main>
 
             {{ if and .Site.Taxonomies "categories" .Site.Params.sidebar }}
             {{ if not (eq (len .Site.Taxonomies.categories) 0) }}
-            <aside>
                 {{ if hugo.IsProduction }}
                     {{- partialCached "aside.html" . .Title }}
                 {{else}}
                     {{- partial "aside.html" . }}
                 {{end}}
-            </aside>
             {{ end }}
             {{ end }}
 
