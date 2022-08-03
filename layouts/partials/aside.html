@@ -7,8 +7,8 @@
         {{ range $key, $value := .Site.Taxonomies.categories }}
             {{ $active := (eq $key $current.Title) }}
 
-            <li class="nav-item page-aside-nav__items">
-                <a class="link-button link-button--right{{if $active}} link-button--right-active{{end}}" href="{{ .Page.Permalink | relURL }}">{{ $key | humanize }} ({{ len $value }})</a>
+            <li class="nav-item page-aside-nav__items{{if $active}} link-button--right-active{{end}}">
+                <a class="link-button link-button--right" href="{{ .Page.Permalink | relURL }}">{{ $key | humanize }} ({{ len $value }})</a>
             </li>
         {{end}}
     </ul>

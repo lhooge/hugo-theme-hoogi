@@ -6,8 +6,8 @@
             {{ $active = or $active (eq .Name $current.Title) }}
             {{ $active = or $active (eq .Identifier $current.Title) }}
             {{ $active = or $active (and (eq .Name "Articles") (eq $current.Section "posts")) }}
-        <li class="nav-item page-nav--items">
-            <a class="link-button link-button--left{{if $active}} link-button--left-active{{end}}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        <li class="nav-item page-nav--items {{if $active}} link-button--left-active{{end}}">
+            <a class="link-button link-button--left" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
         </li>
         {{ end }}
     </ul>
