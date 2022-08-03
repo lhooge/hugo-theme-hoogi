@@ -248,7 +248,7 @@ h6 {
 
 .link-button--left:hover,
 .link-button--left:active,
-.link-button--left-active {
+.link-button--left-active :not(.link-button--left:hover) {
 	color: var(--nav-hover-color);
 	background-color: var(--nav-hover-bg-color);
 	border-right: 10px solid var(--nav-border-color);
@@ -256,7 +256,7 @@ h6 {
 
 .link-button--right:hover,
 .link-button--right:active,
-.link-button--right-active {
+.link-button--right-active :not(.link-button--right-active:hover) {
 	color: var(--nav-hover-color);
 	background-color: var(--nav-hover-bg-color);
 	border-left: 10px solid var(--nav-border-color);
