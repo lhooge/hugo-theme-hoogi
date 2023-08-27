@@ -4,12 +4,12 @@
 {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 
-<link rel="stylesheet" href="{{ "css/master.css" | relURL }}">
-
 <link rel="stylesheet" href="{{ "css/light.css" | relURL }}" media="(prefers-color-scheme: light)">
 <link rel="stylesheet" href="{{ "css/syntax-light.css" | relURL }}" media="(prefers-color-scheme: light)">
 <link rel="stylesheet" href="{{ "css/dark.css" | relURL }}" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="{{ "css/syntax-dark.css" | relURL }}" media="(prefers-color-scheme: dark)">
+
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 
 <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
 

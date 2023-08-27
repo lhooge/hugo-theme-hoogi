@@ -81,6 +81,22 @@ h6 {
 	font-size: 0.8em;
 }
 
+a {
+	color: var(--link-text-color);
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+	color: var(--link-text-color);
+	text-decoration: none;
+}
+
+a:visited {
+	color: var(--link-visited-text-color);
+}
+
+
 .article__content p {
 	font-size: 1.1em;
 	margin-bottom: 20px;
@@ -205,14 +221,10 @@ h6 {
 	background-color: var(--nav-bg-color);
 }
 
-.page-nav > ul,
-.page-aside-nav > ul {
+.page-nav__menu,
+.page-aside-nav__menu {
 	margin: 0;
 	padding: 0;
-}
-
-.page-nav__items,
-.page-aside-nav__items {
 	list-style-type: none;
 }
 
@@ -220,7 +232,7 @@ h6 {
 	padding-left: 1em;
 }
 
-.page-header__headline {
+.page-header--headline {
 	margin: 0.5em 0;
 	padding: 0;
 	color: var(--header-text-color);
@@ -262,15 +274,14 @@ h6 {
 	border-left: 10px solid var(--nav-border-color);
 }
 
-
-.page-footer--list {
-	margin: 0.5em 0;
-	list-style-type: none;
+.page-footer__items {
 }
 
-.page-footer--items {
+.page-footer__menu {
+	list-style-type: none;
 	display: inline-block;
-	margin-right: 0.8em;
+	margin: 0;
+	padding: 0;
 }
 
 .page-footer--link,
@@ -332,7 +343,7 @@ h6 {
 	margin: 0 0 0.6em 0;
 }
 
-.article-header > h1 {
+.article-header__headline {
 	font-size: 2em;
 	margin: 0;
 	color: var(--headline-text-color)

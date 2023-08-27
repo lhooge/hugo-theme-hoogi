@@ -1,13 +1,13 @@
 <aside class="page-aside-nav">
-    <ul>
+    <ul class="page-aside-nav__menu">
         {{ $current := . }}
 
-        <li class="nav-item nav-title">{{ T "categories" }}</li>
+        <li class="nav-title">{{ T "categories" }}</li>
 
         {{ range $key, $value := .Site.Taxonomies.categories }}
             {{ $active := (eq $key $current.Title) }}
 
-            <li class="nav-item page-aside-nav__items{{if $active}} link-button--right-active{{end}}">
+            <li class="page-aside-nav__item{{if $active}} link-button--right-active{{end}}">
                 <a class="link-button link-button--right" href="{{ .Page.Permalink | relURL }}">{{ $key | humanize }} ({{ len $value }})</a>
             </li>
         {{end}}

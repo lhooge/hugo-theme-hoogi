@@ -14,7 +14,7 @@ relativeURLs = false
 [params]
     mainSections = "posts"
     useSummary = true
-    sidebar = false
+    sidebar = true
     description = 'An example description'
 
 [permalinks]

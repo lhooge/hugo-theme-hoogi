@@ -1,12 +1,10 @@
 <footer class="page-footer">
-    <ul class="page-footer--list">
+    <ul class="page-footer__menu">
         {{ $current := . }}
         {{ range .Site.Menus.footer.ByWeight }}
-            {{ $active := or ($current.IsMenuCurrent "footer" .) ($current.HasMenuCurrent "footer" .) }}
-            {{ $active = or $active (eq .Identifier $current.Title) }}
-            {{ $active = or $active (eq .Name $current.Title) }}
+            {{ $active := ($current.IsMenuCurrent "footer" .) }}
 
-            <li class="page-footer--items">
+            <li class="page-footer__items">
                 <a class="page-footer--link {{if $active}}page-footer--link-active{{end}}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
             </li>
         {{ end }}
