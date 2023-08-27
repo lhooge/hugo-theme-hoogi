@@ -22,4 +22,6 @@
 
 {{ $title := print .Title " | " .Site.Title }}
 
+{{ if .Params.math }}{{ partial "math.html" . }}{{ end }}
+
 <title>{{ $title }}</title>
