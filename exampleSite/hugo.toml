@@ -5,6 +5,7 @@ title = 'Hugodemo'
 theme = 'hugo-theme-hoogi'
 themesdir = "../.."
 
+math = true
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
