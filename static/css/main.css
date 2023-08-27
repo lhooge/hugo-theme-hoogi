@@ -335,7 +335,7 @@ a:visited {
 
 .article-header__meta {
 	font-size: 0.9em;
-	filter: brightness(60%);
+	filter: brightness(80%);
 	margin: 0.25em 0;
 }
 
@@ -426,7 +426,12 @@ a:visited {
 		display: none;
 	}
 
-	.article-header > h1,
+	.article-header__meta {
+		filter: none;
+	}
+
+	.article-header__headline,
+	.article-header__meta,
 	a,
 	a:visited,
 	h1,
