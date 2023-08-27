@@ -2,7 +2,8 @@ baseURL = 'https://hugodemo.hoogi.eu/'
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = 'Hugodemo'
-theme = 'Hoogi'
+theme = 'hugo-theme-hoogi'
+themesdir = "../.."
 
 pygmentsUseClasses = true
 pygmentsCodeFences = true
@@ -13,39 +14,45 @@ relativeURLs = false
 [params]
     mainSections = "posts"
     useSummary = true
-    sidebar = true
+    sidebar = false
     description = 'An example description'
 
 [permalinks]
     posts = "/:year/:month/:slug/"
 
 [menu]
-   [[menu.nav]]
+   [[menu.main]]
         name       = "About"
         identifier = "about"
-        url        = "/"
+        pageRef    = "/"
         weight     = 1
 
-    [[menu.nav]]
+    [[menu.main]]
         name       = "Articles"
         identifier = "articles"
-        url        = "/posts"
+        pageRef    = "/posts"
         weight     = 2
 
-    [[menu.nav]]
+    [[menu.main]]
         name       = "Archive"
         identifier = "archive"
-        url        = "/archive"
+        pageRef    = "/archive"
         weight     = 3
 
-    [[menu.nav]]
+    [[menu.main]]
         name       = "Tags"
         identifier = "tags"
-        url        = "/tags"
+        pageRef    = "/tags"
         weight     = 4
+
+    [[menu.main]]
+        name       = "External"
+        identifier = "tags"
+        url        = "https://www.google.com"
+        weight     = 5
 
     [[menu.footer]]
         name       = "Privacy Policy"
         identifier = "privacy"
-        url        = "/privacy"
+        pageRef    = "/privacy"
         weight     = 1
